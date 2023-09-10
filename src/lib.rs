@@ -28,7 +28,7 @@ pub const N_SUPPORTED_MODELS: usize = 1;
 
 #[derive(Serialize, Deserialize, Clone)]
 pub struct ModelList {
-    pub models: [String; N_SUPPORTED_MODELS],
+    pub data: [String; N_SUPPORTED_MODELS],
 }
 
 pub async fn run_webserver(config: Config) {
@@ -63,7 +63,7 @@ pub async fn run_webserver(config: Config) {
     );
 
     let model_list = ModelList {
-        models: ["llama-2".into()],
+        data: ["llama-2".into()],
     };
 
     let app = Router::new()
